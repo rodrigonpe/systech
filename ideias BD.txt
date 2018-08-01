@@ -1,4 +1,5 @@
-1-
-2-
-3-
-4-
+1- tabelas iniciais clientes, produtos, servicos, ordemservico, 
+2- clientes atrib: id, nome, tipocliente, cnpjcpf, ierg, tipotelefone, numtelefone, sexo, logradouro, bairro, numero, cep (mascara), cidade, estado, email
+3- produtos atrib: id, codigo, nome, valor, qtdestoque, setor
+4- servicos atrib: id, codigo, nome, valor
+5- ordemservico atrib: id, codigo, (atributos com as relacoes com as outras tabelas) preciso de ajuda para pensar como irá ser feito a parte da alteração capturando horario e modificando um status e inclusão de produtos/servicos na ordem de servico.
