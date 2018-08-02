@@ -127,7 +127,41 @@ Deletando arquivos:<br>
 
 Deletando todos os aquivos removidos ao mesmo tempo:<br>
 
-<code> git ls-files --deleted | xargs git rm</code></p>
+<code> git ls-files --deleted | xargs git rm</code></p> <br>
+
+
+
+
+<!-- Mantendo um fork atualizado no Github -->
+
+<h2>Mantendo um fork atualizado no Github</h2>
+
+Clone o fork: <br>
+
+<code>git clone https://github.com/....</code></p>
+
+Adicione um remote para o repositório original:<br>
+
+<code>git remote add upstream https://github.com/....</code></p>
+
+*upstream é o nome do meu remote, poderia ser outro nome.
+Atualize o remote upstream:<br>
+
+<code>git fetch upstream</code></p>
+
+Para atualizar meu repositório local, prefiro usar um git fetch, ao invés de um pull.
+faça rebase do master com o master do upstream:<br>
+
+<code>git rebase upstream/master</code></p>
+
+Pronto, agora repositório está atualizado. Agora toda vez que quiser atualizar o branch master com o repositório original  use:<br>
+
+<code>git fetch upstream </code><br>
+<code>git rebase upstream/master</code></p>
+
+E para fazer o push do repositório use:<br>
+
+<code>git push origin master</code></p>
 
 </body>
 </html>
