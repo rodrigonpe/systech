@@ -4,133 +4,130 @@
 	<meta charset="utf-8">
 	<title>Comandos Basicos Git</title>
 	<style type="text/css">
-		body{
-			background-color: skyblue;
-			color: #4F4F4F;
-			padding: 20px;
-		}
-		h2{color: #000}
+		body{background-color: skyblue;color: #363636;padding: 20px;padding-left: 200px;}
+		h2{color: #000;}
+		code{margin:50px;color:#00008B;}
 	</style>
 </head>
 <body>
 
 
-<h2>Iniciando o Git </h2>
+<h2>Comandos Básicos do Git </h2>
 
 <p>	Entre no diretório que deseja controlar a versão e inicie o Git assim: <br>
 
- <code> git init</code> 
+ <code> git init</code> </p>
 
 
-Feito isso, seus arquivos ainda não estão sendo versionados, mas eles estão esperando para serem adicionados no estágio de controle. Para fazer isso digite o comando <br>
+Feito isso, seus arquivos ainda não estão sendo versionados, mas eles estão esperando para serem adicionados no estágio de controle. Para fazer isso digite o comando: <br>
 
-<code> git add nome-do-arquivo-incluindo-extensão</code> <br>
+<code> git add nome-do-arquivo-incluindo-extensão</code> </p>
 
 Se você precisa adicionar todos os arquivos do diretório, basta digitar: <br>
 
-<code> git add .</code>
+<code> git add *</code>
 </p>
-Saber o status do projeto é importante. <br>Com o comando abaixo você consegue ver quais arquivos estão fora do controle, quais foram modificados e estão esperando por uma descrição de modificação etc: <br>
+Saber o status do projeto é importante. Para ver quais arquivos estão fora do controle, quais foram modificados e estão esperando por uma descrição de modificação etc: <br>
 
-<code>git status</code> 
+<code>git status</code> </p>
 
 Voltando ao estágio anterior do adicionamento: <br>
 
-<code> git reset HEAD nome-do-arquivo</code>
+<code> git reset HEAD nome-do-arquivo</code></p>
 
-Commit – Comitando:
+Commit – Comitando: <br>
 
-<code> git commit -m "Mensagem do commit"</code>
+<code> git commit -m "Mensagem do commit"</code></p>
 
-Adicionando e comitando ao mesmo tempo:
+Adicionando e comitando ao mesmo tempo:<br>
 
-<code> git commit -a -m "Mensagem do commit"</code>
+<code> git commit -a -m "Mensagem do commit"</code></p>
 
 Voltando commits a versões anteriores
 
-Voltar um commit:
+Voltar um commit:<br>
 
-<code> git reset HEAD~1</code>
+<code> git reset HEAD~1</code></p>
 
-Voltar dois commits:
+Voltar dois commits:<br>
 
-<code> git reset HEAD~2</code>
+<code> git reset HEAD~2</code></p>
 
-Voltando um commit e deixando o arquivo no estagio anterior:
+Voltando um commit e deixando o arquivo no estagio anterior:<br>
 
-<code>git reset HEAD~1 --soft</code> 
+<code>git reset HEAD~1 --soft</code> </p>
 
-Voltando um commit e excluindo o arquivo, deixando no estágio anterior:
+Voltando um commit e excluindo o arquivo, deixando no estágio anterior:<br>
 
-<code> git reset HEAD~1 --hard</code>
+<code> git reset HEAD~1 --hard</code></p>
 
-Verificando o histórico de commits:
+Verificando o histórico de commits:<br>
 
-<code> git log</code>
+<code> git log</code></p>
 
 Verificando o que foi mudado, diferença entre um arquivo e outro:
+<br>
+<code> git log -p</code></p>
 
-<code> git log -p</code>
+Verificando os 2 últimos commits:<br>
 
-Verificando os 2 últimos commits:
+<code> git log -p -2</code></p>
 
-<code> git log -p -2</code>
+Mostrando as estatísticas de todos os commits:<br>
 
-Mostrando as estatísticas de todos os commits:
+<code> it log --stat</code></p>
 
-<code> it log --stat</code>
+Mostrando todos os commits, cada um em uma linha:<br>
 
-Mostrando todos os commits, cada um em uma linha:
+<code> git log --pretty=oneline</code></p>
 
-<code> git log --pretty=oneline</code>
+Mostrando todos os commits dos últimos 2 dias até o momento atual:<br>
 
-Mostrando todos os commits dos últimos 2 dias até o momento atual
+<code> git log --since=2.days</code></p>
 
-<code></code> git log --since=2.days
+Criando um branch – uma ramificação:<br>
 
-Criando um branch – uma ramificação
+<code> git checkout -b nome-do-branch</code></p>
 
-<code> git checkout -b nome-do-branch</code>
+Verificando em que branch você está:<br>
 
-Verificando em que branch você está
+<code> git branch</code></p>
 
-<code> git branch</code>
+Voltando para o branch master:<br>
 
-Voltando para o branch master
-
-<code> git checkout master</code>
+<code> git checkout master</code></p>
 
 Jogando o branch criado no branch master
 
-Entre como branch master:
+Entre como branch master:<br>
 
-<code> git merge nome-do-branch-que-foi-criado</code>
+<code> git merge nome-do-branch-que-foi-criado</code></p>
 
 Grudando o branch criado no branch master sem o commit
 
-Somente localmente – localhost, entre como branch master:
+Somente localmente – localhost, entre como branch master:<br>
 
-<code> git rebase nome-do-branch-que-foi-criado</code>
+<code> git rebase nome-do-branch-que-foi-criado</code></p>
 
 Removendo um branch:
+<br>
+<code> git branch -D nome-do-branch</code></p>
 
-<code> git branch -D nome-do-branch</code>
+Vendo branchs remotos:<br>
 
-Vendo branchs remotos:
+<code> git branch -a</code></p>
 
-<code> git branch -a</code>
+Mostrando o início do hash, quem comitou, quanto tempo atrás, mensagem: descrição do commit:<br>
 
-Mostrando o início do hash, quem comitou, quanto tempo atrás, mensagem: descrição do commit:
+<code> git log --pretty=format: "%h - %an, %ar : %s"</code></p>
 
-<code> git log --pretty=format: "%h - %an, %ar : %s"</code>
+Deletando arquivos:<br>
 
-Deletando arquivos:
+<code> git rm nome-do-arquivo</code></p>
 
-<code> git rm nome-do-arquivo</code>
+Deletando todos os aquivos removidos ao mesmo tempo:<br>
 
-Deletando todos os aquivos removidos ao mesmo tempo:
-
-<code> git ls-files --deleted | xargs git rm</code>
+<code> git ls-files --deleted | xargs git rm</code></p>
 
 </body>
 </html>
